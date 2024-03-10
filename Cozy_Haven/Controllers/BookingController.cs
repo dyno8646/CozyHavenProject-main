@@ -145,7 +145,7 @@ namespace Cozy_Haven.Controllers
             }
         }
         [HttpPost("CalculateTotalPrice")]
-        public ActionResult<float> CalculateTotalPrice(Booking bookingDetails)
+        public ActionResult<float> CalculateTotalPrice(BookingInfoDTO bookingDetails)
         {
             try
             {

@@ -1,11 +1,13 @@
 ﻿using Cozy_Haven.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Cozy_Haven.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ExcludeFromCodeCoverage]
     public class PaymentController : ControllerBase
     {
         private readonly IPaymentService _paymentservice;

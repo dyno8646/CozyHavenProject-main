@@ -1,0 +1,29 @@
+.search-result {
+    padding: 10px;
+    margin: 5px;
+    background-color: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    color:black;
+    display:flex;
+    text-align:calc(margin-left+10px);
+    margin-left:20px;
+    text-align: left;
+    transition: background-color 0.5s ease;
+  }
+  
+  /* Media Query for Responsive Styling */
+  @media (max-width: 768px) {
+    .search-result {
+      font-size: 14px; 
+    }
+  }
+  @media (min-width:768px) and (max-width:991px){
+    .search-result{
+      font-size: 16px;
+    }
+  }
+
+.search-result:hover {
+    background-color: transparent;
+}

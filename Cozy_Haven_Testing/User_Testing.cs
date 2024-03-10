@@ -26,7 +26,7 @@ namespace Cozy_Haven_Testing
             _mockRepo = new Mock<IRepository<string, User>>();
             _mockLogger = new Mock<ILogger<UserService>>();
             _mockTokenService = new Mock<ITokenService>();
-            _userService = new UserService(_mockRepo.Object, _mockLogger.Object, _mockTokenService.Object);
+            _userService = new UserService(_mockRepo.Object, null, _mockLogger.Object, _mockTokenService.Object, null, null);
         }
 
         [Test]

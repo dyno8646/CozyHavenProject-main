@@ -2,9 +2,11 @@
 using Cozy_Haven.Interfaces;
 using Cozy_Haven.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Cozy_Haven.Repository
 {
+    [ExcludeFromCodeCoverage]
     public class FavouriteRepository:IRepository<int,Favourite>
     {
         private readonly CozyHavenContext _context;

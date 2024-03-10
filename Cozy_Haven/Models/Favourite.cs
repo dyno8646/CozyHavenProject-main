@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Cozy_Haven.Models
 {
+    [ExcludeFromCodeCoverage]
     public class Favourite
     {
         [Key]

@@ -1,8 +1,10 @@
 ﻿using Cozy_Haven.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Cozy_Haven.Contexts
 {
+    [ExcludeFromCodeCoverage]
     public class CozyHavenContext:DbContext
     {
         public CozyHavenContext(DbContextOptions options):base(options)

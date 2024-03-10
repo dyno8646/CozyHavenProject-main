@@ -24,7 +24,7 @@ namespace Cozy_Haven_Testing
         {
             _mockRepo = new Mock<IRepository<int, Hotel>>();
             _mockLogger = new Mock<ILogger<HotelService>>();
-            _hotelService = new HotelService(_mockRepo.Object, _mockLogger.Object);
+            _hotelService = new HotelService(_mockRepo.Object, null,null, _mockLogger.Object) ;
         }
 
         [Test]
@@ -198,7 +198,8 @@ namespace Cozy_Haven_Testing
             _mockRepo.Setup(r => r.GetById(hotelId)).ReturnsAsync(existingHotel);
 
             // Act
-            var result = await _hotelService.UpdateHotelDetails(updatedHotel);
+            // Act
+            var result = await _hotelService.UpdateHotelDetails(hotelId, updatedHotel.Name, updatedHotel.Address, updatedHotel.Description);
 
             // Assert
             Assert.IsNotNull(result);

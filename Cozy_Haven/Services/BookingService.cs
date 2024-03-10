@@ -233,35 +233,43 @@ namespace Cozy_Haven.Services
             //    Adults = booking1.Adults,
             //    Children = booking1.Children
             //};
-            booking.TotalPrice =CalculateTotalPrice(booking);
+            TimeSpan span = booking.CheckOutDate - booking.CheckInDate;
+            float totalPrice = CalculateTotalPrice(new BookingInfoDTO
+            {
+                RoomId = booking.RoomId,
+                Adults = booking1.Adults,
+                Children = booking1.Children,
+                CheckInDate = booking.CheckInDate,
+                CheckOutDate = booking.CheckOutDate
+            });
+            booking.TotalPrice = totalPrice;
             booking.Status = "Booked";
             booking.BookedDate = DateTime.UtcNow;
             booking.UserId = user.UserId;
-            var addedbooking=await _bookingrepository.Add(booking);
+
+            var addedbooking = await _bookingrepository.Add(booking);
             _logger.LogInformation("Booking added successfully");
             return addedbooking;
         }
-        public float CalculateTotalPrice(Booking bookingDetails)
+        public float CalculateTotalPrice(BookingInfoDTO bookingDetails)
         {
             // Get the room details
             var room = _roomrepository.GetById(bookingDetails.RoomId).Result;
-            
             if (room == null)
             {
-                throw new NoRoomFoundException("Room does not exist");
+                throw new NoRoomFoundException();
             }
-            //bool available=await IsRoomAvailable(bookingDetails.RoomId, bookingDetails.CheckInDate, bookingDetails.CheckOutDate);
-            //if (!available) throw new NoRoomFoundException("Room is not avilable for the specified dates");
+
             // Set the MaxOccupancy based on the BedType
             switch (room.BedType)
             {
-                case "SingleBed":
+                case "Single":
                     room.MaxOccupancy = 2;
                     break;
-                case "DoubleBed":
+                case "Double":
                     room.MaxOccupancy = 4;
                     break;
-                case "KingSizeBed":
+                case "KingSize":
                     room.MaxOccupancy = 6;
                     break;
                 default:
@@ -280,7 +288,7 @@ namespace Cozy_Haven.Services
                 //int extraChildren = Math.Min(extraGuests, bookingDetails.Children);
                 int extraChildren = extraGuests - extraAdults;
 
-                if (room.BedType == "SingleBed" || room.BedType == "DoubleBed" || room.BedType == "KingSizeBed")
+                if (room.BedType == "Single" || room.BedType == "Double" || room.BedType == "KingSize")
                 {
                     totalPrice += extraAdults * 0.4f * room.BaseFare;
                     totalPrice += extraChildren * 0.2f * room.BaseFare;

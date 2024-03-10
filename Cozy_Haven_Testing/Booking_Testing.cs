@@ -316,7 +316,7 @@ namespace Cozy_Haven_Testing
             var room = new Room { RoomId = 1, BaseFare = 100, BedType = "SingleBed" };
             _mockRoomRepo.Setup(x => x.GetById(1)).ReturnsAsync(room);
 
-            var bookingDetails = new Booking
+            var bookingDetails = new BookingInfoDTO
             {
                 RoomId = 1,
                 Adults = 2,

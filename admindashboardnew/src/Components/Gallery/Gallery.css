@@ -1,0 +1,27 @@
+
+.lg-react-element {
+    column-count:3;
+    column-gap: 10px;
+}
+@media (max-width:480px){
+    .lg-react-element {
+        column-count:2;
+        column-gap: 10px;
+    }
+    
+}
+.newGallery{
+    background-color: black;
+}
+.newGallery img {
+    max-width: 100%;
+    display: block;
+    padding: 5px 0px;
+    border-radius: 20px;
+    transition: transform 0.2s;
+}
+
+.newGallery img:hover {
+    filter: opacity(.9);
+    transform: scale(1.01);
+}

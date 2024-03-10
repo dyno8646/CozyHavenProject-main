@@ -1,0 +1,132 @@
+/* Google Fonts - Poppins */
+
+.profile-text {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.profile-text .text4 {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+.profile-text .text4 .name4 {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-text .text4 {
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: -4px;
+}
+
+.modal-box img {
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #8bbe1b;
+  box-shadow: #8bbe1b;
+}
+
+.payment_section {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: #e3f2fd;
+}
+
+.payment_section button {
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  padding: 14px 22px;
+  border: none;
+  background: linear-gradient(to right,#7ba818, #8bbe1b, #9bd41e, #a8e12b);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.payment_section button:hover {
+  background-color: #265df2;
+}
+
+.payment_section .show-modal,
+.modal-box {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.payment_section.active .show-modal {
+  display: none;
+}
+
+.overlay3 {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.payment_section.active .overlay3 {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 380px;
+  width: 100%;
+  padding: 30px 20px;
+  border-radius: 24px;
+  background-color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.payment_section.active .modal-box {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-box i {
+  font-size: 70px;
+  color:#8bbe1b;
+}
+
+.modal-box h2 {
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 500;
+  color: #333;
+}
+
+.modal-box h3 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  text-align: center;
+}
+
+.modal-box .buttons {
+  margin-top: 25px;
+}
+
+.modal-box button {
+  font-size: 14px;
+  padding: 6px 12px;
+  margin: 0 10px;
+}

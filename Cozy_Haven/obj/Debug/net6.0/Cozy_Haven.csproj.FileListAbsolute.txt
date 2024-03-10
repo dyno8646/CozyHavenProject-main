@@ -210,3 +210,4 @@ C:\Users\Lavanth\Desktop\Training\Integration\CozyHavenProject-main\Cozy_Haven\o
 C:\Users\Lavanth\Desktop\Training\Integration\CozyHavenProject-main\Cozy_Haven\obj\Debug\net6.0\Cozy_Haven.pdb
 C:\Users\Lavanth\Desktop\Training\Integration\CozyHavenProject-main\Cozy_Haven\obj\Debug\net6.0\Cozy_Haven.genruntimeconfig.cache
 C:\Users\Lavanth\Desktop\Training\Integration\CozyHavenProject-main\Cozy_Haven\obj\Debug\net6.0\ref\Cozy_Haven.dll
+C:\Users\Lavanth\Desktop\Training\Integration\CozyHavenProject-main\Cozy_Haven\obj\Debug\net6.0\Cozy_Haven.sourcelink.json

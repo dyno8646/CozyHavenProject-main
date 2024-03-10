@@ -29,6 +29,30 @@ import HotelReviews from './Components/HotelOwnerDashboard/Pages/HotelReviews';
 import OwnedHotels from './Components/HotelOwnerDashboard/Pages/OwnedHotels';
 import Profile from './Components/Profile';
 import Error from './Components/Error';
+// ---------------------------------------------------------------------
+import HomePage from './Components/HomePage/HomePage';
+import UserDash from './Components/UserDashBoard/UserDash';
+import HotelsPage from './Components/Hotels/HotelsPage';
+import RoomsPage from './Components/Rooms/RoomsPage';
+import PrivateRoute from './Components/PrivateRoutes/PrivateRoute';
+import Register from './Components/Register/Register';
+import ForgotPassword from './Components/ForgotPassword/ForgotPassword';
+import { Gallery } from './Components/Gallery/Gallery';
+import Booking from './Components/Bookings/Booking';
+import Payment from './Components/Payments/Payment';
+import BookingHistory from './Components/ManageBooking/BookingHistory';
+import RescheduleBooking from './Components/RescheduleBooking/RescheduleBooking';
+import PaymentPage from './Components/Payments/Payment2';
+import HotelReviews1 from './Components/Reviews/HotelReviews';
+import UserReviews from './Components/Reviews/UserReviews';
+import HotelImages from './Components/Images/HotelImages';
+import RoomImages from './Components/Images/RoomImages';
+import FoodBlog from './Components/FoodBlog/FoodBlog';
+import ReviewForm from './Components/Reviews/ReviewForm';
+import EditReview from './Components/Reviews/EditReview';
+import { SearchBar2 } from './Components/UserDashBoard/Searchbar2/SearchBar2';
+import FourOhFour from './Components/ErrorPage/Error';
+import PreLanding from './Components/HomePage/PreLanding';
 
 function App() {
   return (
@@ -38,7 +62,38 @@ function App() {
         <Route path="/owner-dashboard/*" element={<OwnerDashboard />} />
         <Route path="/owned-hotels/*" element={<OwnedHotels/>}/>
         <Route path="/login" element={<Login />} />
-        
+        {/*-------------------------------------------------------*/}
+        <Route path="/prelanding" element={<PreLanding />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/hotels" element={<HotelsPage />} />
+          <Route path="/foodblog" element={<FoodBlog />} />
+          <Route path="/roompage" element={<RoomsPage />} />
+          <Route path="/hotelReviews" element={<HotelReviews1/>} />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
+          <Route path="/hotelimages" element={<HotelImages />} />
+          <Route path="/roomimages" element={<RoomImages />} />
+          <Route path="/error" element={<FourOhFour />} />
+          <Route element={<PrivateRoute />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path='/UserDash' element={<UserDash />} />
+            <Route path='/search' element={<SearchBar2 />} />
+            <Route path="/userReviews" element={<UserReviews/>} />
+            <Route path="/bookingHistory" element={<BookingHistory />} />
+            <Route path="/hotels" element={<HotelsPage />} />
+            <Route path="/hotelimages" element={<HotelImages />} />
+            <Route path="/roomimages" element={<RoomImages />} />
+            <Route path="/hotelReviews" element={<HotelReviews1/>} />
+            <Route path="/roompage" element={<RoomsPage />} />
+            <Route path="/booking" element={<Booking />} />
+            <Route path="/reschedule" element={<RescheduleBooking />} />
+            <Route path="/payment" element={<Payment />} />
+            <Route path="/paymentPage" element={<Payment/>} />
+            <Route path="/payment2" element={<PaymentPage />} />
+            <Route path="/addreview" element={<ReviewForm />} />
+            <Route path="/editreview" element={<EditReview />} />
+          </Route>
       </Routes>
     </Router>
   );
