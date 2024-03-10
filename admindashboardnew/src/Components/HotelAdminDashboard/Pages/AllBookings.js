@@ -173,12 +173,12 @@ function AllBookings() {
   //   booking.bookingId.toString().includes(searchTerm)
   // );
   const filteredBookings = sortedBookings.filter((booking) =>
-  Object.values(booking).some(
-    (value) =>
-      typeof value === "string" &&
-      value.toLowerCase().includes(searchTerm.toLowerCase())
-  )
-);
+    Object.values(booking).some(
+      (value) =>
+        typeof value === "string" &&
+        value.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+  );
 
 
   return (
@@ -188,7 +188,7 @@ function AllBookings() {
           <div className="row align-items-center">
             <div className="col">
               <div className="mt-5">
-                <h4 className="card-title float-left mt-2">Bookings</h4>
+                <h4 className="card-title float-left mt-2" style={{color:"black"}}>Bookings</h4>
               </div>
             </div>
           </div>
@@ -204,6 +204,7 @@ function AllBookings() {
                     placeholder="Search Booking"
                     onChange={handleSearch}
                   />
+                  <br/>
                   <table className="datatable table table-stripped table table-hover table-center mb-0">
                     <thead>
                       <tr>

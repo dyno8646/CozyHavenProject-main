@@ -9,7 +9,8 @@ function OwnedHotels() {
     sessionStorage.setItem('selectedHotelId', hotelId);
     sessionStorage.setItem('name',name);
     // Redirect to the owner dashboard for the selected hotel
-    navigate('/owner-dashboard');
+    window.location.href = '/owner-dashboard';
+    //navigate('/owner-dashboard');
   };
 
   return (

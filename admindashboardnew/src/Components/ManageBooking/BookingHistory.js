@@ -99,7 +99,7 @@ function BookingHistory() {
   const isCompleted = (checkoutDate, status) => {
     const today = new Date();
     const checkout = new Date(checkoutDate);
-    return checkout < today && (status && status.toLowerCase() !== 'cancelled');
+    return checkout < today && (status && status.toLowerCase() !== 'cancelled'  && status.toLowerCase() !== 'refunded');
   };
 
 
@@ -144,7 +144,7 @@ function BookingHistory() {
         .then(response => {
           if (response.ok) {
             alert('Booking successfully cancelled. Please refresh the page or fetch updated bookings data.');
-            //window.location.reload();
+            window.location.reload();
             setRefresh(!refresh);
             console.log('Booking successfully cancelled.');
             sessionStorage.removeItem('bookingToCancel');

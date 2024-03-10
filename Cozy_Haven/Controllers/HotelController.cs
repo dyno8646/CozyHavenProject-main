@@ -596,6 +596,19 @@ namespace Cozy_Haven.Controllers
             }
             return Ok(response);
         }
+        [HttpGet("HotelReviews1")]
+        public async Task<IActionResult> GetHotelReviews1(int id)
+        {
+            try
+            {
+                var reviews = await _hotelService.GetHotelReviews(id);
+                return Ok(reviews);
+            }
+            catch (NoHotelFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
         [HttpGet("AvailableRoomsCount")]
         public async Task<IActionResult> GetAvailableRoomsCount(int hotelId)
         {

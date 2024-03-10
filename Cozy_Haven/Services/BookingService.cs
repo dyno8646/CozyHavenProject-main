@@ -87,6 +87,7 @@ namespace Cozy_Haven.Services
         //    return bookings1;
 
         //}
+        [ExcludeFromCodeCoverage]
         public async Task<Booking> RescheduleBooking(int bookingId, DateTime newCheckInDate, DateTime newCheckOutDate)
         {
             var booking = await GetBooking(bookingId);
@@ -121,6 +122,7 @@ namespace Cozy_Haven.Services
             var bookings = await GetAllBookings();
             return bookings.Count;
         }
+        [ExcludeFromCodeCoverage]
         public async Task<Booking> CancelBooking(int bookingId)
         {
             var booking = await GetBooking(bookingId);

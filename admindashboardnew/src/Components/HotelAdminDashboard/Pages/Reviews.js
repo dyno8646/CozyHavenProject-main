@@ -38,7 +38,7 @@ function Reviews() {
           <div className="row align-items-center">
             <div className="col">
               <div className="mt-5">
-                <h4 className="card-title float-left mt-2">Reviews</h4>
+                <h4 className="card-title float-left mt-2" style={{color:"black"}}>Reviews</h4>
                 {/* <a
                   href="add-review.html"
                   className="btn btn-primary float-right veiwbutton "
@@ -61,7 +61,7 @@ function Reviews() {
                         <th>Hotel ID</th>
                         <th>User ID</th>
                         <th>Rating</th>
-                        <th>Comment</th>
+                        <th style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>Comment</th>
                         <th>Date Posted</th>
                         {/* <th className="text-right">Actions</th> */}
                       </tr>

@@ -53,7 +53,7 @@ function RoomsList() {
                         <br/>
                         {rooms.length === 0 && (
                             <div className="centeredMessage">
-                                <h3>All rooms are currently booked.</h3>
+                                <h3 style={{color:"#8bbe1b"}}>All rooms are currently booked.</h3>
                                 <h6>Sorry, no Rooms are currently available to book and plan your stay here.</h6>
                                 <button onClick={() => navigate('/hotels')} className={styles.button}>Click here..To go back to HotelsPage</button>
                             </div>

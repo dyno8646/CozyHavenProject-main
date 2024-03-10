@@ -414,6 +414,7 @@ function AddHotel() {
                       multiple
                       onChange={handleImageChange}
                     />
+                    <label style={{marginLeft:"10px"}}>Max. 10 pics</label>
                   </div>
                 </div>
               </div>

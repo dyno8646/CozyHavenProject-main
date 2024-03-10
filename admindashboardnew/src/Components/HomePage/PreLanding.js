@@ -22,7 +22,7 @@ function PreLanding() {
                 opacity: 0,
                 display: "none",
                 duration: 1.5,
-                delay: 5.5,
+                delay: 3.5,
             }
         );
 

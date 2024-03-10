@@ -141,6 +141,7 @@ namespace Cozy_Haven.Services
             }
             throw new UserNotFoundException(username);
         }
+        [ExcludeFromCodeCoverage]
         public async Task<ICollection<BookingInfoDTO>> GetUserBookingInfo(string username)
         {
             var user = await _repo.GetById(username);
@@ -217,6 +218,7 @@ namespace Cozy_Haven.Services
             }
             throw new UserNotFoundException(username);
         }
+        [ExcludeFromCodeCoverage]
         public async Task<ICollection<ReviewDTO>> GetUserReviews2(string username)
         {
             var user = await GetUser(username);

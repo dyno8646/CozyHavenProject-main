@@ -1092,7 +1092,7 @@ button {
 /*=============== DESTINATION END ===============*/
 
 /*=============== PACKAGES ===============*/
-
+/* 
 .carousel-inner {
     padding: 1em;
 }
@@ -1102,7 +1102,7 @@ button {
 }
 
 .card {
-    /*box-shadow: 0 0 45px rgba(0, 0, 0, .08);*/
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
     margin: 0 0.8em;
     box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
     border: none;
@@ -1169,7 +1169,7 @@ card-body {
     .card .img-wrapper {
         height: 17em;
     }
-}
+} */
 
 /*=============== PACKAGE END ===============*/
 

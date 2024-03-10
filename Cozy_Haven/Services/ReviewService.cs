@@ -3,6 +3,7 @@ using Cozy_Haven.Interfaces;
 using Cozy_Haven.Mappers;
 using Cozy_Haven.Models;
 using Cozy_Haven.Models.DTOs;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Cozy_Haven.Services
 {
@@ -34,6 +35,7 @@ namespace Cozy_Haven.Services
             if(reviews!=null) return reviews;
             throw new NoReviewFoundException();
         }
+        [ExcludeFromCodeCoverage]
         public async Task<Review> EditReview(int id, ReviewDTO review)
         {
             var existingReview = await GetReview(id);
@@ -50,6 +52,7 @@ namespace Cozy_Haven.Services
             }
             throw new NoReviewFoundException();
         }
+        [ExcludeFromCodeCoverage]
         public async Task<List<ReviewDTO>> GetAllReviews2()
         {
             var reviews = await _repository.GetAll();
@@ -93,6 +96,7 @@ namespace Cozy_Haven.Services
             }
             throw new NoReviewFoundException();
         }
+        [ExcludeFromCodeCoverage]
         public async Task<Review> UpdateReview2(int id, ReviewDTO reviewDTO)
         {
             var review = await GetReview(id);

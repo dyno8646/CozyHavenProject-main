@@ -138,7 +138,7 @@ function AddBooking() {
   const [errors, setErrors] = useState({});
   const handleChange = (e) => {
     const { name, value } = e.target;
-  
+
     // Handle date inputs separately
     if (name === 'checkInDate' || name === 'checkOutDate') {
       // Ensure that value is a valid date string or empty string
@@ -155,14 +155,14 @@ function AddBooking() {
       }));
     }
   };
-  
+
   useEffect(() => {
     const calculateTotalPrice = async () => {
-      console.log("roomId",bookingData.roomId);
-      console.log("checkindate",bookingData.checkInDate);
-      console.log("checkoutdate",bookingData.checkOutDate);
-      console.log("adults",bookingData.adults);
-      console.log("children",bookingData.children);
+      console.log("roomId", bookingData.roomId);
+      console.log("checkindate", bookingData.checkInDate);
+      console.log("checkoutdate", bookingData.checkOutDate);
+      console.log("adults", bookingData.adults);
+      console.log("children", bookingData.children);
       try {
         const response = await fetch(
           "http://localhost:5272/api/Booking/CalculateTotalPrice",
@@ -173,21 +173,24 @@ function AddBooking() {
             },
             body: JSON.stringify({
               roomId: bookingData.roomId,
+              hotelName: "",
               checkInDate: bookingData.checkInDate,
               checkOutDate: bookingData.checkOutDate,
               adults: bookingData.adults,
               children: bookingData.children,
+              roomType: "",
+              status: ""
             }),
           }
         );
         const data = await response.json();
-          console.log("Total price calculated:", data);
-          setBookingData((prevData) => ({
+        console.log("Total price calculated:", data);
+        setBookingData((prevData) => ({
           ...prevData,
           totalPrice: data,
-          }));
-        
-        
+        }));
+
+
       } catch (error) {
         console.error("Error calculating total price:", error);
       }
@@ -197,10 +200,10 @@ function AddBooking() {
       calculateTotalPrice();
     }
   }, [bookingData.roomId,
-    bookingData.checkInDate,
-    bookingData.checkOutDate,
-    bookingData.adults,
-    bookingData.children,]);
+  bookingData.checkInDate,
+  bookingData.checkOutDate,
+  bookingData.adults,
+  bookingData.children,]);
 
 
   const username = sessionStorage.getItem("username");
@@ -241,14 +244,14 @@ function AddBooking() {
         console.log("Booking created:", data);
         setBookingData({
           userId: 0,
-    roomId: 0,
-    checkInDate: '',
-    checkOutDate: '',
-    adults: 0,
-    children: 0,
-    totalPrice: 0,
-    status: "Booked", // Default status
-    bookedDate: new Date().toISOString().slice(0, 10),
+          roomId: 0,
+          checkInDate: '',
+          checkOutDate: '',
+          adults: 0,
+          children: 0,
+          totalPrice: 0,
+          status: "Booked", // Default status
+          bookedDate: new Date().toISOString().slice(0, 10),
         }
 
         )

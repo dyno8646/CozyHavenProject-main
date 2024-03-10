@@ -21,6 +21,7 @@ namespace Cozy_Haven.Interfaces
         public Task<ICollection<Hotel>> GetHotelsByOwnerId(int ownerid);
         public Task<int> GetAvailableRoomsCount(int hotelId);
         public Task<List<Hotel>> GetHotelsByDestinationName(string destinationName);
+        public Task<ICollection<Review>> GetHotelReviews1(int hotelId);
 
     }
 }

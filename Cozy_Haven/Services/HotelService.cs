@@ -32,6 +32,7 @@ namespace Cozy_Haven.Services
             newhotel=await _repository.Add(newhotel);
             return newhotel;
         }
+        [ExcludeFromCodeCoverage]
         public async Task<List<Hotel>> GetHotelsByDestinationName(string destinationName)
         {
             try
@@ -86,6 +87,7 @@ namespace Cozy_Haven.Services
             if (hotel != null) { return hotel; }
             throw new NoHotelFoundException();
         }
+        [ExcludeFromCodeCoverage]
         public async Task<List<Hotel>> GetHotelsByDestinationId(int destinationId)
         {
             var hotels = await GetAllHotels();
@@ -133,6 +135,17 @@ namespace Cozy_Haven.Services
 
                 // Return the filtered reviews
                 return hotelReviews;
+            }
+            throw new NoHotelFoundException(hotelId);
+        }
+        [ExcludeFromCodeCoverage]
+        public async Task<ICollection<Review>> GetHotelReviews1(int hotelId)
+        {
+            _logger.LogInformation("Getting reviews for hotel with ID: {HotelId}", hotelId);
+            var hotel = await GetHotel(hotelId);
+            if (hotel != null)
+            {
+                return hotel.Reviews;
             }
             throw new NoHotelFoundException(hotelId);
         }

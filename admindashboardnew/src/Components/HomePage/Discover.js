@@ -53,7 +53,7 @@ function Discover() {
                                 making each bite a delightful journey of taste and tradition.
                             </p>
                             <div className="login_button">
-                                <a href="#" className="shop-now-btn" onClick={()=>navigate('/foodblog')}>EXPLORE</a>
+                                <a href="#" className="shop-now-btn" onClick={()=>navigate('/error')}>EXPLORE</a>
                             </div>
                         </div>
                     </div>

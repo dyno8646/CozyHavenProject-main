@@ -172,7 +172,7 @@ function AllUsers() {
           <div className="row align-items-center">
             <div className="col">
               <div className="mt-5">
-                <h4 className="card-title float-left mt-2">Users</h4>
+                <h4 className="card-title float-left mt-2" style={{color:"black"}}>Users</h4>
                 <input 
                   type="text" 
                   className="form-control float-right" 

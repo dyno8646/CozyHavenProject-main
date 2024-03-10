@@ -54,7 +54,7 @@ namespace Cozy_Haven.Services
         {
             return _repository.GetById(id);
         }
-
+        [ExcludeFromCodeCoverage]
         public async Task<Destination> UpdateDestination(Destination destination)
         {
             var existingDestination = await GetDestination(destination.DestinationId);

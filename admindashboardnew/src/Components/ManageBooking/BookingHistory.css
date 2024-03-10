@@ -193,6 +193,10 @@ tbody tr.hide td img {
     background-color: #6fcaea;
     color:black;
 }
+.status.refunded {
+    background-color: #6fcaea;
+    color:black;
+}
 .doctor_image {
     margin-left:15px;
     width: 50px;

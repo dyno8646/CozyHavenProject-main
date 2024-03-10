@@ -48,6 +48,14 @@ function Hotels() {
                 <div className="container22">
                     <h2 className="h2 section-title">Hotels</h2>
                     <p className="section-text">Experience luxury beyond imagination at our exquisite hotel. Indulge in unparalleled comfort, impeccable service, and breathtaking views. Your dream getaway awaits!</p>
+                    <br/>
+                    {hotels.length === 0 && (
+                            <div className="centeredMessage">
+                                <h3 style={{color:"#8bbe1b"}}>No Hotels are available in this destination at present to book.</h3>
+                                <h6>Sorry, no hotels are currently available to book and plan your stay here.</h6>
+                                <button onClick={() => navigate('/UserDash')} className={styles.button}>Click here..To go back to Search for a diffrent destination to plan your stay.</button>
+                            </div>
+                        )}
                     {hotels.map((hotel) => (
                         <div key={hotel.id}>
                             <ul className="package1-list">
