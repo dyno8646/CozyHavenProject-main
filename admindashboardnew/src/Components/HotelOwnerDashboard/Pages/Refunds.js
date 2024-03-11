@@ -65,7 +65,7 @@ function Refunds() {
                 <div className="row align-items-center">
                   <div className="col">
                     <div className="mt-5">
-                      <h4 className="card-title float-left mt-2">Cancelled Bookings</h4>
+                      <h4 className="card-title float-left mt-2" style={{color:"black"}}>Cancelled Bookings</h4>
                     </div>
                   </div>
                 </div>

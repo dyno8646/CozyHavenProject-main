@@ -19,7 +19,7 @@ function HotelReviews() {
           <div className="row align-items-center">
             <div className="col">
               <div className="mt-5">
-                <h4 className="card-title float-left mt-2">Reviews</h4>
+                <h4 className="card-title float-left mt-2" style={{color:"black"}}>Reviews</h4>
                 
               </div>
             </div>

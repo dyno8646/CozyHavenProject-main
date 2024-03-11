@@ -186,7 +186,7 @@ function BookingHistory() {
     const twoHoursInMillis = 2 * 60 * 60 * 1000;
 
 
-    if (booking.status.toLowerCase() !== 'cancelled' && booking.status.toLowerCase() !== 'underprocess' ) {
+    if (booking.status.toLowerCase() !== 'cancelled' && booking.status.toLowerCase() !== 'underprocess'  && booking.status.toLowerCase() !== 'refunded' ) {
       return checkInDate - currentTime > twoHoursInMillis;
     } else {
       return false;

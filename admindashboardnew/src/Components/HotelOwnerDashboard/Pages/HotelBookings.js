@@ -38,7 +38,7 @@ function HotelBookings() {
           <div className="row align-items-center">
             <div className="col">
               <div className="mt-5">
-                <h4 className="card-title float-left mt-2">Bookings</h4>
+                <h4 className="card-title float-left mt-2" style={{color:"black"}}>Bookings</h4>
                 {/* <a
                   href="add-booking.html"
                   className="btn btn-primary float-right veiwbutton "

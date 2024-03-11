@@ -10,6 +10,9 @@ function Footer() {
     const handleClick = () => {
         navigate("/gallery");
     };
+    const handleInstagramClick = () => {
+        window.open('https://www.instagram.com/__r375__?utm_source=qr&igshid=ZmhlaDJ6NGNudm1z', '_blank');
+    };
 
     $(window).scroll(function () {
         if ($(this).scrollTop() > 400) {
@@ -22,6 +25,22 @@ function Footer() {
         $('html, body').animate({ scrollTop: 0 }, 500, 'easeInOutExpo');
         return false;
     });
+
+    const handleSignUp = () => {
+
+        const emailInput = document.getElementById('emailInput');
+        const email = emailInput.value;
+        const isEmailRegistered = checkIfEmailIsRegistered(email);
+
+        if (isEmailRegistered) {
+            alert(`The email "${email}" is registered and you will receive monthly updates from now on.`);
+            emailInput.value = '';
+        }
+    };
+
+    const checkIfEmailIsRegistered = (email) => {
+        return true;
+    };
 
     return (
         <div id="contact">
@@ -55,7 +74,7 @@ function Footer() {
                                         <span className="tooltip">Twitter</span>
                                         <span><i className="fab fa-twitter" /></span>
                                     </li>
-                                    <li className="icon instagram">
+                                    <li className="icon instagram" onClick={handleInstagramClick}>
                                         <span className="tooltip">Instagram</span>
                                         <span><i className="fab fa-instagram" /></span>
                                     </li>
@@ -99,8 +118,8 @@ function Footer() {
                             <h4 className="text-white mb-3">Newsletter</h4>
                             <p>Stay updated with the latest news, trends, and exclusive offers delivered straight to your inbox!</p>
                             <div className="position-relative mx-auto" style={{ maxWidth: 400 }}>
-                                <input className="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email" />
-                                <button type="button" className="btn btn-primary8 py-1 position-absolute top-0 end-0 mt-1 me-1" >SignUp</button>
+                                <input id="emailInput" className="form-control border-primary w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email" />
+                                <button type="button" className="btn btn-primary8 py-1 position-absolute top-0 end-0 mt-1 me-1" onClick={handleSignUp}>SignUp</button>
                             </div>
                         </div>
                     </div>

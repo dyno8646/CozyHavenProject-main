@@ -75,7 +75,9 @@ export function Gallery() {
 
         ];
         setImages(data);
-        setLoading(false);
+        setTimeout(() => {
+            setLoading(false); // Change the loading state to false after 5 seconds
+        }, 5000);
     }, []);
 
     const onInit = () => {
@@ -87,7 +89,19 @@ export function Gallery() {
             <div className="newGallery">
                 <h2 style={{ display: "flex", justifyContent: "center", padding: "40px" ,color:"white"}}>GALLERY</h2>
                 {loading ? (
-                    <p>Loading images...</p>
+                    <div className="center">
+                    <div className="wave"></div>
+                    <div className="wave"></div>
+                    <div className="wave"></div>
+                    <div className="wave"></div>
+                    <div className="wave"></div>
+                    <div className="wave"></div>
+                    <div className="wave"></div>
+                    <div className="wave"></div>
+                    <div className="wave"></div>
+                    <div className="wave"></div>
+                </div>
+                    
                 ) : (
                     <LightGallery
                         onInit={onInit}

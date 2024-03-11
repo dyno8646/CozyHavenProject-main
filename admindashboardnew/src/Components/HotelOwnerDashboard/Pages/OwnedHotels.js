@@ -18,7 +18,7 @@ function OwnedHotels() {
     //   <div className="content container-fluid">
     <div style={{padding:'2rem'}}>
         <div className="page-header">
-          <h3 className="page-title">Owned Hotels</h3>
+          <h3 className="page-title" style={{color:"black"}}>Owned Hotels</h3>
         </div>
         <div className="row">
           {hotels.map((hotel) => (

@@ -1582,3 +1582,108 @@ card-body {
 }
 
 /*=============== FOOTER END ===============*/
+
+
+
+
+.card__data1 {
+    width: 280px;
+    background-color:hsl(0, 0%, 100%);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+    border-radius: 1rem;
+    position: relative;
+    left:0;
+    right:0;
+    bottom:18rem;
+    margin-inline: auto;
+    opacity: 0;
+    transition: opacity 1s 1s;
+  }
+  
+  .card__description1 {
+    display: block;
+    font-size: .875rem;
+    margin-bottom: .25rem;
+  }
+  
+  .card__title1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: hsl(0, 0%, 15%);
+    margin-bottom: .75rem;
+  }
+  
+  .card__button1 {
+    text-decoration: none;
+    font-size: .875rem;
+    font-weight: 500;
+    color: hsl(82, 60%, 28%);
+  }
+  
+  .card__button1:hover {
+    text-decoration: underline;
+  }
+  .card-banner1:hover .card__data1 {
+    animation: show-data 1s forwards;
+    opacity: 1;
+    transition: opacity .3s;
+  }
+  
+  .card-banner1:hover {
+    animation: remove-overflow 2s forwards;
+  }
+  
+  .card-banner1:not(:hover) {
+    animation: show-overflow 2s forwards;
+  }
+  
+  .card-banner1:not(:hover) .card__data1 {
+    animation: remove-data 1s forwards;
+  }
+  
+  /* Card animation */
+  @keyframes show-data {
+    50% {
+      transform: translateY(-10rem);
+    }
+    100% {
+      transform: translateY(-7rem);
+    }
+  }
+  
+  @keyframes remove-overflow {
+    to {
+      overflow: initial;
+    }
+  }
+  
+  @keyframes remove-data {
+    0% {
+      transform: translateY(-7rem);
+    }
+    50% {
+      transform: translateY(-10rem);
+    }
+    100% {
+      transform: translateY(.5rem);
+    }
+  }
+  
+  @keyframes show-overflow {
+    0% {
+      overflow: initial;
+      pointer-events: none;
+    }
+    50% {
+      overflow: hidden;
+    }
+  }
+  @media (max-width: 768px) {
+    .card__data1{
+        position: relative;
+        left:0;
+        right:0;
+        bottom:1rem;
+    }
+  }

@@ -582,7 +582,7 @@ function AddRoom() {
         <div className="page-header">
           <div className="row align-items-center">
             <div className="col">
-              <h3 className="page-title mt-5">Add Room</h3>
+              <h3 className="page-title mt-5" style={{color:"black"}}>Add Room</h3>
             </div>
           </div>
         </div>

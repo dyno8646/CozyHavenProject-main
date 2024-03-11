@@ -186,7 +186,7 @@ namespace Cozy_Haven.Services
             throw new UserNotFoundException(username);
         }
         [ExcludeFromCodeCoverage]
-        public async Task<User> UpdateUserProfile(string username, string firstName, string lastName, string contactNumber, string email, DateTime dateofbirth,string Address,String Gender)
+        public async Task<User> UpdateUserProfile(string username, string firstName, string lastName, string contactNumber, string email, DateTime dateofbirth,string Address,string Gender)
         {
             _logger.LogInformation("Updating user profile: {Username}", username);
             var existingUser = await GetUser(username);

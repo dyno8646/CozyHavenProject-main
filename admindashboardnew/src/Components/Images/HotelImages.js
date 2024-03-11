@@ -15,11 +15,15 @@ import lgShare from 'lightgallery/plugins/share';
 import lgRotate from 'lightgallery/plugins/rotate';
 import lgZoom from 'lightgallery/plugins/zoom';
 import styles from '../Images/HotelImages.css'
+import { useNavigate } from 'react-router-dom';
 
 function HotelImages() {
   const [imageUrls, setImageUrls] = useState([]);
   const hotelId = sessionStorage.getItem('hotelId');
   const hotelName = sessionStorage.getItem('hotelName');
+  const [loading, setLoading] = useState(true);
+  const navigate=useNavigate();
+
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -30,39 +34,55 @@ function HotelImages() {
         console.error('Error fetching images:', error);
       }
     };
-
+    setTimeout(() => {
+      setLoading(false); // Change the loading state to false after 5 seconds
+    }, 5000);
     fetchImages();
   }, [hotelId]);
 
   return (
     <div className={styles} id="/hotelimages">
+      {loading ? (
+        <div class="wrap1">
+          <div class="loading1">
+            <div class="bounceball"></div>
+            <div class="text">NOW LOADING</div>
+          </div>
+        </div>
+
+      ) : (
         <div className="newGallery1">
-      <h2 style={{display:"flex",justifyContent:"center",padding:"40px"}}>{hotelName}</h2>
-      <br/>
+          <h2 style={{ display: "flex", justifyContent: "center", padding: "40px", marginTop: "50px" }}>{hotelName}</h2>
+          <br />
+
+          <div className="image-container">
+            <h3 style={{ display: "grid" }}>Our Gallery</h3>
+
+            <LightGallery
+              plugins={[lgThumbnail, lgZoom, lgAutoplay, lgFullscreen, lgRotate, lgShare]}
+              mode="lg-slide"
+              speed={500}
+              download={false}
+              controls={true}
+              slideEndAnimatoin={true}
+              loadOnDemand={true}
+            >
+              {imageUrls.map((imageUrl, index) => (
+                <a href={`data:image/jpeg;base64,${imageUrl}`} key={index}>
+                  <img
+                    src={`data:image/jpeg;base64,${imageUrl}`}
+                    alt={`Image ${index + 1}`}
+                    style={{ marginBottom: "20px" }}
+                  />
+                </a>
+              ))}
+            </LightGallery>
+
+          </div>
+
+        </div>
       
-      <div className="image-container">
-      <h3 style={{display:"grid"}}>Our Gallery</h3>
-        <LightGallery
-          plugins={[lgThumbnail, lgZoom, lgAutoplay, lgFullscreen, lgRotate, lgShare]}
-          mode="lg-slide"
-          speed={500}
-          download={false}
-          controls={true} 
-          slideEndAnimatoin={true} 
-          loadOnDemand={true}
-        >
-          {imageUrls.map((imageUrl, index) => (
-            <a href={`data:image/jpeg;base64,${imageUrl}`} key={index}>
-              <img
-                src={`data:image/jpeg;base64,${imageUrl}`}
-                alt={`Image ${index + 1}`}
-                style={{ marginBottom:"20px"}}
-              />
-            </a>
-          ))}
-        </LightGallery>
-      </div>
-      </div>
+      )}
     </div>
   );
 }

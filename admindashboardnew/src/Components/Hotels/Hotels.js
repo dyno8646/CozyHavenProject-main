@@ -71,10 +71,22 @@ function Hotels() {
                                                     onClick={() => {
                                                         sessionStorage.setItem('hotelId', hotel.hotelId);
                                                         sessionStorage.setItem('hotelName', hotel.name);
-                                                        navigate('/hotelimages');
+                                                        navigate('/hotelimages')
                                                     }}
                                                 />
+                                                
                                             ))}
+                                            <div className="card__data1">
+                                                <span className="card__description1">{hotel.address}</span>
+                                                <h2 className="card__title1">{hotel.name}</h2>
+                                                <a href="#" className="card__button1" onClick={() => {
+                                                        sessionStorage.setItem('hotelId', hotel.hotelId);
+                                                        sessionStorage.setItem('hotelName', hotel.name);
+                                                        navigate('/hotelimages')
+                                                    }}>View More Images</a>
+                                            </div>
+                                            
+
                                         </figure>
 
                                         <div className="card-content1">

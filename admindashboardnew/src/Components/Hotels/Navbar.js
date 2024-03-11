@@ -46,6 +46,7 @@ function Navbar() {
         if (!isLoggedIn()) {
             alert('Please log in first to continue.');
             navigate('/');
+            sessionStorage.clear();
         } else {
             navigate('/UserDash');
         }

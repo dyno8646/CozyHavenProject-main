@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cozy_Haven")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb1240ab2fa6ab054e5a0862952d806871c1d2af")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+420ac3a85f9fbfdc552a47581b2423b19d884113")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cozy_Haven")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cozy_Haven")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
