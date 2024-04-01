@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 function Login() {
-    const [username, setUsername] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loggedin, setLoggedin] = useState(false);
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,7 +14,7 @@ function Login() {
       role: "",
       token: "",
     };
-  
+
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -27,10 +27,10 @@ function Login() {
         sessionStorage.setItem("token", data.token);
         sessionStorage.setItem("username", data.username);
         sessionStorage.setItem("userId", data.userId);
-        sessionStorage.setItem("role",data.role);
+        sessionStorage.setItem("role", data.role);
         alert("Login success - " + data.username);
         setLoggedin(true);
-    
+
         if (data.role === 'Owner') {
           // Fetch and display the list of owned hotels
           const hotelsResponse = await fetch(`http://localhost:5272/api/Hotel/OwnedHotels?ownerId=${data.userId}`);
@@ -47,6 +47,9 @@ function Login() {
           // Redirect to hotel admin dashboard
           window.location.href = '/admin-dashboard';
           //navigate('/admin-dashboard')
+        }
+        else if (data.role === 'User') {
+          navigate('/UserDash')
         } else {
           // Redirect to guest dashboard
           // window.location.href = '/guest-dashboard';
@@ -59,13 +62,13 @@ function Login() {
       console.error('Error logging in:', error);
       setLoggedin(false);
     }
-    
-  
-    };
 
-    return (
-      
-      <div className="main-wrapper login-body">
+
+  };
+
+  return (
+
+    <div className="main-wrapper login-body">
       <div className="login-wrapper">
         <div className="container">
           <div className="loginbox" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
@@ -78,7 +81,7 @@ function Login() {
                   <div className="form-group">
                     <input className="form-control" type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} /> </div>
                   <div className="form-group">
-                    <input className="form-control" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/> </div>
+                    <input className="form-control" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} /> </div>
                   <div className="form-group">
                     <button className="btn btn-primary btn-block" type="submit">Login</button>
                   </div>
@@ -93,8 +96,8 @@ function Login() {
         </div>
       </div>
     </div>
-        
-    );
+
+  );
 }
 
 export default Login;

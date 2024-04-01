@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/17b150bf-1377-4cee-9c57-555620b783e7/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/CozyHaven2",
+    "appService.deploySubpath": "."
+}

@@ -36,7 +36,7 @@ function HotelImages() {
     };
     setTimeout(() => {
       setLoading(false); // Change the loading state to false after 5 seconds
-    }, 5000);
+    }, 3000);
     fetchImages();
   }, [hotelId]);
 
