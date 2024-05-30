@@ -15,12 +15,14 @@ import lgShare from 'lightgallery/plugins/share';
 import lgRotate from 'lightgallery/plugins/rotate';
 import lgZoom from 'lightgallery/plugins/zoom';
 import styles from '../Images/HotelImages.css'
+import { useNavigate } from 'react-router-dom';
 
 function HotelImages() {
   const [imageUrls, setImageUrls] = useState([]);
   const roomId = sessionStorage.getItem('roomId');
   const hotelName = sessionStorage.getItem('hotelName');
   const roomType = sessionStorage.getItem('roomType');
+  const navigate=useNavigate();
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -40,6 +42,7 @@ function HotelImages() {
         <div className="newGallery1">
       <h2 style={{display:"flex",justifyContent:"center",padding:"40px"}}>{hotelName}</h2>
       <br/>
+      <button className="bttn" style={{ marginTop: "-60px", marginLeft: "1200px", position: "absolute", width: "10%", height: "30px", borderRadius: "20px" }} type="button" onClick={() => navigate('/Rooms')}>Go Back</button>
       
       <div className="image-container">
       <h3 style={{display:"grid"}}>{roomType}</h3>

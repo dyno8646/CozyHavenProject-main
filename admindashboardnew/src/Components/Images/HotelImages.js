@@ -54,10 +54,9 @@ function HotelImages() {
         <div className="newGallery1">
           <h2 style={{ display: "flex", justifyContent: "center", padding: "40px", marginTop: "50px" }}>{hotelName}</h2>
           <br />
-
+          <button className="bttn" style={{ marginTop: "-60px", marginLeft: "1200px", position: "absolute", width: "10%", height: "30px", borderRadius: "20px" }} type="button" onClick={() => navigate('/Hotels')}>Go Back</button>
           <div className="image-container">
             <h3 style={{ display: "grid" }}>Our Gallery</h3>
-
             <LightGallery
               plugins={[lgThumbnail, lgZoom, lgAutoplay, lgFullscreen, lgRotate, lgShare]}
               mode="lg-slide"
